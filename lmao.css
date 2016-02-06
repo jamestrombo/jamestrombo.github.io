@@ -21,7 +21,9 @@ h1 {
 	font-family: 'Raleway', sans-serif;
 	position: relative;
 	top: 40vh;
-	left: 45vw;
+	left: 39vw;
+	font-size: 3em;
+	font-weight: 300;
 }
 * {
 	margin: 0;
@@ -50,8 +52,10 @@ img {
 }
 .place {
   background: black;
-  background: -webkit-linear-gradient(left top, black, purple); 
-  background: -o-linear-gradient(bottom right, black, purple); 
-  background: -moz-linear-gradient(bottom right, black, purple); 
-  background: linear-gradient(to bottom right, black, purple);
+  
+
+background: #360033; /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom left, #360033 , #0b8793); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom left, #360033 , #0b8793); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
 }
