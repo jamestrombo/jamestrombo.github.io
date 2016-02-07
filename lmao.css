@@ -37,7 +37,7 @@ h1 {
 .lol {
 	font-family: 'Open Sans', sans-serif;
 	top: 43vh;
-	left: 48vw;
+	left: 45.5vw;
 	position: relative;
 }
 .catslol {
@@ -45,8 +45,28 @@ h1 {
 	height: 3.4vw;
 	width: 3.4vw;
 	position: relative;
-	left: 49vw;
+	left: 46.5vw;
 }
+.cool {
+	height: 3.6vw;
+	width: 3.6vw;
+	position: relative;
+	left: 47vw;
+	top: 43.7vh;
+}
+.cool:hover {
+	-webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
 .lmao {
 	position: relative;
     text-align: center;
