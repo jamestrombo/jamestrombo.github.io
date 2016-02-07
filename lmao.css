@@ -16,6 +16,10 @@
 	height: 100vh;
 	width: 100vw;
 }
+body {
+	min-height: 200vh;
+	max-width: 100vw;
+}
 h1 {
 	color: white;
 	font-family: 'Raleway', sans-serif;
@@ -29,13 +33,32 @@ h1 {
 	margin: 0;
 	padding: 0;
 }
-a {
+.lol {
 	font-family: 'Open Sans', sans-serif;
 	top: 43vh;
 	left: 48vw;
 	position: relative;
 }
-a:hover {
+.catslol {
+	top: 43.3vh;
+	height: 3.4vw;
+	width: 3.4vw;
+	position: relative;
+	left: 49vw;
+}
+.lmao {
+	position: relative;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    right: -70vw;
+    width: 20vw;
+    height: 100vh;
+    z-index: 75;
+    background-color: black;
+    color: white;
+
+}
+.catslol:hover {
 	-webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -45,6 +68,29 @@ a:hover {
     -moz-transition: .2s ease-in-out;
     -o-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
+}
+.lol:hover {
+	-webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+}
+
+.lmao.open{
+	-ms-transform: translate(20vw, 0);
+    -webkit-transform: translate(20vw, 0);
+    -o-transform: translate(20vw, 0);
+    -moz-transform: translate(20vw, 0);
+    transform: translate(20vw, 0);
+    -webkit-transition: .3s ease-in-out transform;
+    -moz-transition: .3s ease-in-out transform;
+    -o-transition: .3s ease-in-out transform;
+    transition: .3s ease-in-out transform;
 }
 img {
 	height: 3vw;
