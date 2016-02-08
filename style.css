@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+    unicode-range: U+0000—001F;
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FAriQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+    unicode-range: U+0000—001F;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+header {
+    height: 100vh;
+    width: 100vw;
+    background: #360033;
+    background: -webkit-linear-gradient(top right, #360033, #0b8793);
+    background: linear-gradient(to bottom left, #360033, #0b8793);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+h1 {
+    color: white;
+    font-family: 'Raleway', 'Open Sans' sans-serif;
+    top: 40vh;
+    left: 39vw;
+    font-size: 3em;
+    font-weight: 300;
+}
+.social-buttons a:hover {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+}
+.social-buttons img {
+    height: 45px;
+    width: 45px;
+}
+section {
+    height: 100vh;
+}
+section p {
+    width: 20vw;
+    height: 100vh;
+    z-index: 75;
+    background-color: black;
+    color: white;
+    position: absolute;
+    right: 10vw;
+    padding: 10px;
+}
