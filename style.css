@@ -55,6 +55,7 @@ h1 {
     box-shadow: 1px 1px 10px rgba(40, 40, 40, 0.6);
     opacity: 0.75;
     top: 20vh;
+    border-radius: 4px;
 
 }
 .social-buttons {
