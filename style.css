@@ -65,6 +65,9 @@ h1 {
     top: 20vh;
     border-radius: 4px;
 }
+.social-buttons {
+    padding-top: 1vh;
+}
 .social-buttons img {
     -webkit-transition: .3s;
     transition: .3s;
@@ -79,9 +82,4 @@ h1 {
 img {
     height: 40px;
     width: 40px;
-}
-.aboutme {
-    background-image: url('img/stun.jpg');
-    background-size: cover;
-    height: 100vh;
 }
