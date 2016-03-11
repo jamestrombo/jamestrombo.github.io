@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
+    unicode-range: U+0000—001F;
+}
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FAriQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+    unicode-range: U+0000—001F;
+}
+* {
+	padding: 0px;
+	margin: 0px;
+	z-index: 0;
+}
+header {
+	font-family: 'Raleway', sans-serif;
+	width: 100vw;
+	height: 100px;
+	background-color: #3F51B5;
+	color: white;
+	position: fixed;
+	z-index: 50;
+	box-shadow: 1px 1px 10px rgba(40, 40, 40, 0.6);;
+	-webkit-transition: .25s;
+    transition: .25s;
+}
+header h1 {
+	font-size: 4em;
+	position: fixed;
+	z-index: 55;
+	top: 2vh;
+	-webkit-transition: .25s; 
+    transition: .25s;
+}
+a {
+	text-decoration: none;
+}
+a li h3:hover{
+	color: #FFEB3B;
+}
+section {
+	height: 100vh;
+	width: 100vw;
+}
+section h1 {
+	font-family: 'Raleway', sans-serif;
+	position: absolute;
+	top: 15vh;
+}
+.topnav {
+	color: white;
+	position: absolute;
+	left: 50vw;
+}
+.topnav a li{
+	color: white;
+	display: inline-block;
+	width: 10vw;
+	height: 7vh;
+	text-decoration: none;
+	margin-top: 7.5vh;
+	text-align: center;
+}
+.landing {
+	position: absolute;
+	top: 0vh;
+}
+.about {
+	position: absolute;
+	top: 100vh;
+}
+.about h1 {
+	left: 45vw;
+}
