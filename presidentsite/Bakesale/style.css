@@ -41,7 +41,7 @@ a {
 	text-decoration: none;
 }
 a li h3:hover{
-	color: #FFEB3B;
+	color: #F44336;
 }
 section {
 	height: 100vh;
@@ -65,6 +65,10 @@ section h1 {
 	text-decoration: none;
 	margin-top: 7.5vh;
 	text-align: center;
+}
+.huge {
+	width: 13vw;
+	margin-right: 4vw;
 }
 .landing {
 	position: absolute;

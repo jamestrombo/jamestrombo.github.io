@@ -71,6 +71,10 @@ p {
 	margin-top: 7.5vh;
 	text-align: center;
 }
+.huge {
+	width: 13vw;
+	margin-right: 4vw;
+}
 .landing {
 	position: absolute;
 	top: 0vh;
@@ -88,7 +92,7 @@ p {
 	width: 30vw;
 	height: 23vw;
 	left: 65vw;
-	top: 19vh;
+	top: 25vh;
 }
 .about {
 	position: absolute;

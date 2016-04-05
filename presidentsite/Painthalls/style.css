@@ -41,7 +41,7 @@ a {
 	text-decoration: none;
 }
 a li h3:hover{
-	color: #FFEB3B;
+	color: #F44336;
 }
 section {
 	height: 100vh;
@@ -50,7 +50,10 @@ section {
 section h1 {
 	font-family: 'Raleway', sans-serif;
 	position: absolute;
-	top: 15vh;
+}
+p {
+	font-family: 'Open Sans', sans-serif;
+	position: absolute;
 }
 .topnav {
 	color: white;
@@ -66,14 +69,28 @@ section h1 {
 	margin-top: 7.5vh;
 	text-align: center;
 }
-.landing {
-	position: absolute;
-	top: 0vh;
+.huge {
+	width: 13vw;
+	margin-right: 4vw;
 }
-.about {
+.bland p{
 	position: absolute;
-	top: 100vh;
+	top: 20vh;
 }
-.about h1 {
-	left: 45vw;
+.bland h1 {
+	top: 15vh;
+}
+.paint p{
+	position: absolute;
+	top: 120vh;
+}
+.paint h1 {
+	top: 115vh;
+}
+.club p{
+	position: absolute;
+	top: 220vh;
+}
+.club h1 {
+	top: 215vh;
 }
