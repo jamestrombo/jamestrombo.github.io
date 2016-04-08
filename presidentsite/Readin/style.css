@@ -44,6 +44,9 @@ header h1 {
 	-webkit-transition: .25s; 
     transition: .25s;
 }
+p {
+	font-family: 'Open Sans', sans-serif;
+}
 a {
 	text-decoration: none;
 }
@@ -53,6 +56,10 @@ a li h3:hover{
 section {
 	height: 100vh;
 	width: 100vw;
+}
+section a {
+	text-decoration: none;
+	font-family: 'Open Sans', sans-serif;
 }
 section h1 {
 	font-family: 'Roboto', sans-serif;
@@ -77,14 +84,41 @@ section h1 {
 	width: 13vw;
 	margin-right: 4vw;
 }
-.landing {
-	position: absolute;
-	top: 0vh;
+.problem h1 {
+	left: 45vw;
 }
-.about {
+.problem p {
+	top: 25vh;
+	position: absolute;
+	width: 40vw;
+	left: 5vw;
+}
+.problem p em {
+	top: 50vh;
+	position: absolute;
+	font-family: 'Open Sans', sans-serif;
+	width: 20vw;
+	left: 30vw;
+}
+.problem img {
+	width: 21vw;
+	height: 30vw;
+	top: 20vh;
+	position: absolute;
+	left: 70vw;
+}
+.presentation h1 {
 	position: absolute;
 	top: 100vh;
-}
-.about h1 {
 	left: 45vw;
+}
+.presentation p {
+	position: absolute;
+	top: 110vh;
+	left: 30vw;
+}
+.presentation a {
+	top: 115vh;
+	position: absolute;
+	left: 38vw;
 }
