@@ -1,3 +1,3 @@
-document.getElementById('email').addEventListener('click', function() {
+function email() {
 	window.open('mailto:jamestrombo@gmail.com');
-});
+}

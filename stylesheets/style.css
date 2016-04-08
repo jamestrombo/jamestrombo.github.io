@@ -23,6 +23,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    peperareniss: rare;
+    memeness: dank;
+    -webkit-smoke-weed: erryday;
 }
 body {
     font-family: 'Open Sans', 'Raleway', sans-serif;
@@ -89,4 +92,7 @@ h1 {
 img {
     height: 50px;
     width: 50px;
+}
+#email img:hover {
+    cursor: pointer;
 }
