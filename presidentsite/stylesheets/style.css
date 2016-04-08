@@ -41,6 +41,12 @@ a {
 	text-decoration: none;
 	font-family: 'Raleway', sans-serif;
 	font-size: 1.1em;
+	color: white;
+}
+a:link
+{
+   color: white;
+   text-decoration: none;
 }
 a li h3:hover{
 	color: #F44336;
