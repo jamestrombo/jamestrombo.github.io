@@ -100,9 +100,19 @@ p {
 .paint p{
 	position: absolute;
 	top: 120vh;
+	width:40vw;
+	left: 6vw;
 }
 .paint h1 {
 	top: 115vh;
+	left: 46vw;
+}
+.paint img {
+	top: 122vh;
+	height: 70vh;
+	width: 100vh;
+	position: absolute;
+	left: 46vw;
 }
 .club p{
 	position: absolute;
@@ -110,4 +120,10 @@ p {
 }
 .club h1 {
 	top: 215vh;
+	left: 42vw;
+}
+.club img{
+	top: 230vh;
+	position: absolute;
+	left: 21vw;
 }
