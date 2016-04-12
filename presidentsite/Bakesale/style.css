@@ -59,6 +59,11 @@ section h1 {
 	position: absolute;
 	top: 15vh;
 }
+iframe {
+	top: 25vh;
+	position: relative;
+	left: 30vw;
+}
 .topnav {
 	color: white;
 	position: absolute;
