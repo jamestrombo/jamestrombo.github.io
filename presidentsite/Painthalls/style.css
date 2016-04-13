@@ -90,8 +90,8 @@ p {
 	top: 15vh;
 	left: 48vw;
 }
-.bland img {
-	width: 28vw;
+#stairs {
+	width: 30vw;
 	height: 37vw;
 	position: absolute;
 	right: 5vw;
@@ -107,12 +107,26 @@ p {
 	top: 115vh;
 	left: 46vw;
 }
-.paint img {
+#graffiti {
 	top: 122vh;
 	height: 70vh;
 	width: 100vh;
 	position: absolute;
 	left: 46vw;
+}
+#graph {
+	position: absolute;
+	left: 7vw;
+	top: 37vh;
+	width: 40vw;
+	height: 45vh;
+}
+#graph2 {
+	top: 140vh;
+	position: absolute;
+	width: 40vw;
+	height: 35vh;
+	left: 4vw;
 }
 .club p{
 	position: absolute;
