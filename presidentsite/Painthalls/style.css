@@ -70,42 +70,31 @@ p {
 .topnav a li{
 	color: white;
 	display: inline-block;
-	width: 10vw;
 	height: 7vh;
 	text-decoration: none;
 	margin-top: 7.5vh;
 	text-align: center;
-}
-.huge {
-	width: 14vw;
-	margin-right: 3vw;
+	margin-right: 4vw;
 }
 .bland {
-	height: 105vh;
+	height: 104vh;
 }
 .bland p{
 	position: absolute;
-	top: 24vh;
+	top: 28vh;
 	width: 45vw;
 	left: 5vw;
 }
 .bland h1 {
-	top: 15vh;
+	top: 19vh;
 	left: 48vw;
-}
-#stairs {
-	width: 30vw;
-	height: 37vw;
-	position: absolute;
-	right: 5vw;
-	top: 10vw;
 }
 .paint {
   	background-color: #F44336;
   	height: 90vh;
 }
 .paint:before,
-  .paint:after {
+.paint:after {
     background: inherit;
     content: '';
     display: block;
@@ -136,27 +125,6 @@ p {
 	top: 110vh;
 	left: 46vw;
 }
-#graffiti {
-	top: 117vh;
-	height: 70vh;
-	width: 100vh;
-	position: absolute;
-	left: 46vw;
-}
-#graph {
-	position: absolute;
-	left: 7vw;
-	top: 37vh;
-	width: 40vw;
-	height: 45vh;
-}
-#graph2 {
-	top: 137vh;
-	position: absolute;
-	width: 40vw;
-	height: 35vh;
-	left: 4vw;
-}
 .club p{
 	position: absolute;
 	top: 220vh;
@@ -169,4 +137,32 @@ p {
 	top: 230vh;
 	position: absolute;
 	left: 21vw;
+}
+#graffiti {
+	top: 117vh;
+	height: 70vh;
+	width: 100vh;
+	position: absolute;
+	left: 46vw;
+}
+#stairs {
+	width: 30vw;
+	height: 37vw;
+	position: absolute;
+	right: 5vw;
+	top: 13vw;
+}
+#graph {
+	position: absolute;
+	left: 7vw;
+	top: 41vh;
+	width: 40vw;
+	height: 45vh;
+}
+#graph2 {
+	top: 137vh;
+	position: absolute;
+	width: 40vw;
+	height: 35vh;
+	left: 4vw;
 }
