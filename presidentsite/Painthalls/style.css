@@ -97,18 +97,44 @@ p {
 	right: 5vw;
 	top: 10vw;
 }
+.paint {
+  	background-color: #F44336;
+  	height: 90vh;
+}
+.paint:before,
+  .paint:after {
+    background: inherit;
+    content: '';
+    display: block;
+    height: 50%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden; // for Chrome Windows
+  }
+.paint:before {
+	transform: skewY(1.5deg);
+  	transform-origin: 100% 0;
+  	top: 100vh;
+}
+.paint:after {
+	transform: skewY(-1.5deg);
+  	transform-origin: 100% 0;
+  	top: 145vh;
+}
 .paint p{
 	position: absolute;
-	top: 120vh;
+	top: 117vh;
 	width:40vw;
 	left: 6vw;
 }
 .paint h1 {
-	top: 115vh;
+	top: 110vh;
 	left: 46vw;
 }
 #graffiti {
-	top: 122vh;
+	top: 117vh;
 	height: 70vh;
 	width: 100vh;
 	position: absolute;
@@ -122,7 +148,7 @@ p {
 	height: 45vh;
 }
 #graph2 {
-	top: 140vh;
+	top: 137vh;
 	position: absolute;
 	width: 40vw;
 	height: 35vh;
