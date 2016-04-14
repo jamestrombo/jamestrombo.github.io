@@ -27,7 +27,7 @@
 header {
 	font-family: 'Roboto', sans-serif;
 	width: 100vw;
-	height: 100px;
+	height: 15vh;
 	background-color: #3F51B5;
 	color: white;
 	position: fixed;
@@ -77,8 +77,11 @@ p {
 	text-align: center;
 }
 .huge {
-	width: 13vw;
-	margin-right: 4vw;
+	width: 14vw;
+	margin-right: 3vw;
+}
+.bland {
+	height: 105vh;
 }
 .bland p{
 	position: absolute;
@@ -116,7 +119,7 @@ p {
 .paint:before {
 	transform: skewY(1.5deg);
   	transform-origin: 100% 0;
-  	top: 100vh;
+  	top: 105vh;
 }
 .paint:after {
 	transform: skewY(-1.5deg);
