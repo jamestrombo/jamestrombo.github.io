@@ -33,8 +33,10 @@ body {
 header {
     height: 100vh;
     width: 100vw;
+    /*
     background: -webkit-linear-gradient(top right, #360033, #0b8793);
     background: linear-gradient(to bottom left, #360033, #0b8793);
+    */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -52,13 +54,15 @@ header {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    background-color: #263238;
 }
 h1 {
-    color: white;
+    color: #80DEEA;
     font-family: 'Raleway', 'Roboto', sans-serif;
     position: relative;
     font-size: 3em;
     font-weight: 300;
+    text-shadow: 0px 4px 4px rgba(38, 50, 56, 0.2);
 }
 .textbox {
     position: relative;
@@ -88,6 +92,7 @@ h1 {
     transform: rotate(360deg);
     -webkit-transition: .2s;
     transition: .2s;
+    fill: black;
 }
 img {
     height: 50px;
