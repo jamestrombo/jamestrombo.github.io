@@ -14,7 +14,7 @@ link.onclick = function() {
 			clearInterval(scroll);
             // Go to exactly the target section in case scrolling overshot
 		}
-		
+
 	}, 1);
 };
 
@@ -23,10 +23,12 @@ window.onscroll = function() {
 	if (document.documentElement.scrollHeight === document.body.scrollTop + window.innerHeight) {
 		clearInterval(scroll)
 		link.style.opacity = 0;
+		link.style.cursor = 'default';
 		console.log('maaan')
 	} else {
 		clearInterval(scroll)
 		link.style.opacity = 1;	
+		link.style.cursor = 'pointer';
 		console.log('yo')
 	}
 };
