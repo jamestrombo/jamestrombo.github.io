@@ -13,10 +13,8 @@ link.onclick = function() {
             // Stop animation
 			clearInterval(scroll);
             // Go to exactly the target section in case scrolling overshot
-			document.body.scrollTop = prevSection + window.innerHeight;
-			clearInterval(scroll)
 		}
-
+		
 	}, 1);
 };
 
@@ -25,9 +23,10 @@ window.onscroll = function() {
 	if (document.documentElement.scrollHeight === document.body.scrollTop + window.innerHeight) {
 		clearInterval(scroll)
 		link.style.opacity = 0;
+		console.log('maaan')
 	} else {
-		link.style.opacity = 1;	
 		clearInterval(scroll)
-
+		link.style.opacity = 1;	
+		console.log('yo')
 	}
 };
