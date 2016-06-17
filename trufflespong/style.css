@@ -102,6 +102,10 @@ button svg {
     height: 40px;
     margin-top: 5px;
 }
+iframe {
+	left: 25vw;
+	position: absolute;
+}
 button {
     height: 50px;
     width: 50px;
