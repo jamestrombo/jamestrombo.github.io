@@ -12,10 +12,19 @@ link.onclick = function() {
 		if (window.innerHeight * Math.floor(document.body.scrollTop / window.innerHeight) - 1 >= prevSection || document.body.scrollTop % window.innerHeight === 0) {
             // Stop animation
 			clearInterval(scroll);
+			console.log(window.innerHeight)
             // Go to exactly the target section in case scrolling overshot
 		}
 
 	}, 1);
+};
+window.onscroll = function() {
+	 if (document.body.scrollTop >= 694 && document.body.scrolTop <= 1388) {
+		link.style.fill = 'white';
+		console.log(hi)
+	}
+	console.log('magic')
+	
 };
 
 // Hide button when at bottom of page and show it if not
@@ -25,7 +34,8 @@ window.onscroll = function() {
 		link.style.opacity = 0;
 		link.style.cursor = 'default';
 		console.log('maaan')
-	} else {
+	}
+	else {
 		clearInterval(scroll)
 		link.style.opacity = 1;	
 		link.style.cursor = 'pointer';
