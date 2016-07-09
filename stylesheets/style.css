@@ -5,30 +5,14 @@
     src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
     unicode-range: U+0000—001F;
 }
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Raleway Light'), local('Raleway-Light'), url(https://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FAriQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
-    unicode-range: U+0000—001F;
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url(Roboto.woff2) format('woff2');
-  unicode-range: U+0000-001FF;
-}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    peperareniss: rare;
-    memeness: dank;
-    -webkit-smoke-weed: erryday;
 }
 body {
-    font-family: 'Open Sans', 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    overflow: none;
 }
 header {
     height: 100vh;
