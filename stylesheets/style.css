@@ -46,10 +46,13 @@ header {
     transition: .25s ease-in-out;
 }
 header.trigger {
-    top: -100vh;
+    transform: translate(0px, -100vh);
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition:	   .25s ease-in-out;
+}
+header.untrigger {
+    transform: translate(0px, 0vh);
 }
 h1 {
     color: #80DEEA;
