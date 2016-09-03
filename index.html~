@@ -14,6 +14,9 @@
             <a id="email" onclick="email()"><img src="img/email2.svg"></img></a>
         </div>
     </header>
+    <section id='introduction'>
+    <h2>Hi.</h2> 
+    </section>
     <script src="js/scripts.js"></script>
 </body>
 

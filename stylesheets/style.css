@@ -110,11 +110,11 @@ h2 {
 }
 p {
 padding-left: 4vw;
-   font-size: 1.25;
    position: absolute;
    top: 275px;
    color: black;
    font-family: 'Roboto', Sans-Serif;
+   padding-right: 4vw; 
 }
 section img {
     position: absolute;
