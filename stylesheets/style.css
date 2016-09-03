@@ -13,7 +13,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     overflow: none;
-    height: 200vh;
+    height: 120vh;
 }
 header {
     position: fixed;
@@ -44,6 +44,7 @@ header {
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
+    z-index: 1738
 }
 header.trigger {
     transform: translate(0px, -100vh);
@@ -98,4 +99,27 @@ img {
 }
 #email img:hover {
     cursor: pointer;
+}
+h2 {
+   padding-left: 4vw;
+   font-size: 3em;
+   position: absolute;
+   top: 200px;
+   color: black;
+   font-family: 'Roboto', Sans-Serif;
+}
+p {
+padding-left: 4vw;
+   font-size: 1.25;
+   position: absolute;
+   top: 275px;
+   color: black;
+   font-family: 'Roboto', Sans-Serif;
+}
+section img {
+    position: absolute;
+    left: 50vw;
+    height: 25vw;
+    width: 25vw;
+    top: 200px;
 }
