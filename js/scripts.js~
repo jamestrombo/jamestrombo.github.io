@@ -1,8 +1,0 @@
-function email() {
-	window.open('mailto:jamestrombo@gmail.com');
-}
-window.addEventListener('scroll', function(e) {
-	if (window.scrollY == 10){
-	    alert('Hey girl ;)');
-	}
-});
