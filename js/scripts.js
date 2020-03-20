@@ -8,12 +8,14 @@ function email() {
 }
 function backgroundColor() {
 	console.log("her");
+	randcolor = colorarray[Math.floor(Math.random()*colorarray.length)]
+	$("#complink").css('color', randcolor);
 	if (!initial){
-		$("#header").css({ backgroundColor: colorarray[Math.floor(Math.random()*colorarray.length)],});
+		$("#header").css({ backgroundColor: randcolor,});
 	}
 	if (initial) {
 		$("#header").velocity({
-				backgroundColor: colorarray[Math.floor(Math.random()*colorarray.length)],
+				backgroundColor: randcolor,
 				}, {
 				duration: 1000,
 			});	
