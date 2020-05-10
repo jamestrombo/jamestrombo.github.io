@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -43,11 +44,12 @@ header.untrigger {
 }
 h1 {
     color: rgba(255,255,255,.87);
-    font-family: 'Raleway', 'Roboto', sans-serif;
-    font-size: 3em;
+    font-family: 'Playfair Display', 'Raleway', 'Roboto', sans-serif;
+    font-size: 5em;
     font-weight: 300;
     text-shadow: 0px 4px 4px rgba(38, 50, 56, 0.2);
     text-align: center;
+    padding-bottom: 10vh;
 }
 .textbox {
     position: relative;
@@ -98,15 +100,15 @@ h2 {
    position: absolute;
    top: 200px;
    color: black;
-   font-family: 'Roboto', Sans-Serif;
+   font-family: 'Playfair Display', 'Roboto', Sans-Serif;
 }
 p {
-   padding-left: 4vw;
+   padding-left: 6vw;
    position: absolute;
-   top: 275px;
+   top: 300px;
    color: black;
    font-family: 'Roboto', Sans-Serif;
-   padding-right: 4vw; 
+   padding-right: 6vw; 
    font-size: 1.2em;
 }
 section{

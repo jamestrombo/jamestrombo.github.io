@@ -9,7 +9,7 @@ function email() {
 function backgroundColor() {
 	console.log("her");
 	randcolor = colorarray[Math.floor(Math.random()*colorarray.length)]
-	$("#complink").css('color', randcolor);
+	$("#resume").css('color', randcolor);
 	if (!initial){
 		$("#header").css({ backgroundColor: randcolor,});
 	}
