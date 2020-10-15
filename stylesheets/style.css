@@ -31,16 +31,40 @@ header {
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
     z-index: 300;
-    background-color: #00897B;
+    /*background-color: #00897B;  */ 
+}
+.headercontent {
+  background-color: #00897B;
+  height: 100vh;
+  width: 100vw;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#resume {
+  height: 40vh;
+  width: 100vw;
+  top: -50vh;
+  clip-path: polygon(0 28%, 100% 0, 100% 62%, 0 95%);
+  position: relative;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
 header.trigger {
     transform: translate(0px, -100vh);
+    /*clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);*/
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition:	   .25s ease-in-out;
 }
 header.untrigger {
     transform: translate(0px, 0vh);
+    /*clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%)*/
 }
 h1 {
     color: rgba(255,255,255,.87);
@@ -86,6 +110,7 @@ h1 {
 #arrows {
   justify-content: center;
   display: flex;
+
 }
 img {
     height: 50px;
@@ -107,7 +132,7 @@ p {
    position: absolute;
    top: 300px;
    color: black;
-   font-family: 'Roboto', Sans-Serif;
+   font-family: 'Playfair Display', 'Roboto', Sans-Serif;
    padding-right: 6vw; 
    font-size: 1.2em;
 }
@@ -132,7 +157,7 @@ section img {
 }
 
 .arrows path {
-  stroke: #ffffff;
+  stroke: black;
   fill: transparent;
   stroke-width: 3px;  
   animation: arrow 2s infinite;
