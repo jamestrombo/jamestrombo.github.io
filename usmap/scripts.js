@@ -1599,12 +1599,15 @@ var totalvotes;
 var votesleft;
 var margin;
 var percentcomeback;
+var currentstate;
 $(function(){
 	
 	$('path').click(function(){
+            $('path').css('fill', '#940F15');
+            $(this).css('fill', '#2E598F');
+
 		$('#info').html("<h1>" + $(this).attr('id') + "</h1>" + "<p></p>");
             calcdone = false;
-		var currentstate;
 		console.log(states.data);
 		for (state of states.data){
 			console.log(state.state);
@@ -1623,7 +1626,7 @@ $(function(){
 $(function(){
       console.log("hey");
       $(document).click(function(){
-            //console.log($('#info p #votesin').val())
+                        //console.log($('#info p #votesin').val())
             if ($('#info p #votesin').val() != '' &&
                   $('#info p #percentin').val()&&
                   $('#info p #aheadvotes').val()&&

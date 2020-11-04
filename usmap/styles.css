@@ -9,7 +9,7 @@ path{
     stroke:#0C2141;
 }
 path:hover{
-    fill:#2E598F;
+    fill:#2E598F !important;
     cursor: pointer;
 }
 body {
