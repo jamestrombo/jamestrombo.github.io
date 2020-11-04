@@ -1593,10 +1593,17 @@ var states = {
    console.log(clickedState.attr("ID"));
    alert('you clicked on state #' + clickedState);
 });*/
+var calcdone = false;
+var votesin;
+var totalvotes;
+var votesleft;
+var margin;
+var percentcomeback;
 $(function(){
 	
 	$('path').click(function(){
-		$('#info h1').html($(this).attr('id'));
+		$('#info').html("<h1>" + $(this).attr('id') + "</h1>" + "<p></p>");
+            calcdone = false;
 		var currentstate;
 		console.log(states.data);
 		for (state of states.data){
@@ -1605,6 +1612,31 @@ $(function(){
 				currentstate = state;
 			}
 		}
-		$('#info p').html('Electoral Votes: ' + currentstate.electoralvotes);
+           
+            $('#info p').append('Electoral Votes: ' + currentstate.electoralvotes);
+            $('#info p').append('<br> Reporting %: <input type="text" id="percentin"  size="10">');
+		$('#info').append('<p><br> Candidate Ahead Votes: <input type="text" id="aheadvotes" size="10"></p>');
+            $('#info').append('<p><br> Candidate Behind Votes: <input type="text" id="behindvotes" size="10"></p>');
+            
 	});
+});
+$(function(){
+      console.log("hey");
+      $(document).click(function(){
+            //console.log($('#info p #votesin').val())
+            if ($('#info p #votesin').val() != '' &&
+                  $('#info p #percentin').val()&&
+                  $('#info p #aheadvotes').val()&&
+                  $('#info p #behindvotes').val()&&
+                  calcdone == false){
+                  calcdone == true;
+                  $('#calculations').remove();
+                  votesin = parseInt($('#info p #aheadvotes').val()) + parseInt($('#info p #behindvotes').val())
+                  totalvotes = Math.floor((votesin*100)/parseInt($('#info p #percentin').val()));
+                  votesleft = Math.floor(totalvotes - votesin);
+                  margin = parseInt($('#info p #aheadvotes').val()) - parseInt($('#info p #behindvotes').val());
+                  percentcomeback = (margin + votesleft)/(2*votesleft);
+                  $('#info').append('<p id="calculations"><br> Vote Left: ' + Math.floor(votesleft) + '<br> % Required of Votes Left: ' + Math.floor(percentcomeback * 100, 2) + '</p>');
+            }
+      });
 });
