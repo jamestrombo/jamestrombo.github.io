@@ -45,3 +45,7 @@ h1 {
 	font-family: 'Playfair Display', serif;
 	color: #0C2141;
 }
+b:hover {
+	color: #940F15;
+	cursor: pointer;
+}

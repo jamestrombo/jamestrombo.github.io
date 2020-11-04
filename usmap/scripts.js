@@ -1620,7 +1620,7 @@ $(function(){
             $('#info p').append('<br> Reporting %: <input type="text" id="percentin"  size="10">');
 		$('#info').append('<p><br> Candidate Ahead Votes: <input type="text" id="aheadvotes" size="10"></p>');
             $('#info').append('<p><br> Candidate Behind Votes: <input type="text" id="behindvotes" size="10"></p>');
-            
+            $('#info').append('<p style="text-align: center;"><b>Submit</b></p>');
 	});
 });
 $(function(){
