@@ -10,13 +10,13 @@
   </head>
   <body>
     <main>
-         <canvas id="canvas" class="bg-gradient-to-b from-white from-[-5%] via-[#87cefa] via-[13%] to-[#87cefa]" style="position:absolute; left:0; top:0; z-index: -1;">
+         <canvas id="canvas" class="bg-gradient-to-r from-cyan-500 to-[#87cefa]" style="position:absolute; left:0; top:0; z-index: -1;">
         </canvas>
         <div class="hero min-h-screen">
           <div class="hero-content text-center">
             <div class="max-w-xl">
               <h1 class="text-5xl font-bold">James Trombo</h1>
-              <p class="pt-6 pb-5">I'm a current student studying Computer Science & Math interested in Finance, Math, Technology and Real Estate.</p>
+              <p class="pt-6 pb-5">I'm a current student studying Computer Science & Math interested in Finance, Game Theory, Technology and Real Estate.</p>
 
               <p class="pb-6">I have experience with a variety of technologies, including React, Angular, Java, Python and many other. I've built projects in hockey analytics, sports betting arbitrage, neural networks and much more.</p>
               <button class="btn btn-primary"><a href="mailto:jamestrombo@gmail.com">Email Me</a></button>
@@ -25,7 +25,7 @@
         </div>
     </main>
   </body>
-  <script>
+<script>
     // Get the canvas and resize it to full screen
     var canvas = document.getElementById("canvas");
     canvas.width = window.innerWidth;
@@ -105,10 +105,51 @@
                 drawSnowflake(snowflake.points, snowflake.centerX, snowflake.centerY, snowflake.rotationAngle);
             });
 
+            drawBarnsleyFern();
+
             requestAnimationFrame(draw);
         }
 
         draw();
+    }
+
+    // Function to draw Barnsley Fern at the bottom of the canvas
+    function drawBarnsleyFern() {
+        let x = 0, y = 0; // Initial point
+        let width = canvas.width;
+        let height = canvas.height;
+        let offsetX = width / 2;
+        let offsetY = height - 50;
+
+        let iterations = 10000; // Number of points to draw
+        ctx.fillStyle = "green";
+
+        for (let i = 0; i < iterations; i++) {
+            let nextX, nextY;
+            let r = Math.random();
+
+            if (r < 0.01) {
+                nextX = 0;
+                nextY = 0.16 * y;
+            } else if (r < 0.86) {
+                nextX = 0.85 * x + 0.04 * y;
+                nextY = -0.04 * x + 0.85 * y + 1.6;
+            } else if (r < 0.93) {
+                nextX = 0.2 * x - 0.26 * y;
+                nextY = 0.23 * x + 0.22 * y + 1.6;
+            } else {
+                nextX = -0.15 * x + 0.28 * y;
+                nextY = 0.26 * x + 0.24 * y + 0.44;
+            }
+
+            x = nextX;
+            y = nextY;
+
+            let plotX = offsetX + x * 50;
+            let plotY = offsetY - y * 50;
+
+            ctx.fillRect(plotX, plotY, 1, 1);
+        }
     }
 
     // Set up parameters for multiple snowflakes
@@ -119,7 +160,7 @@
     for (let i = 0; i < numSnowflakes; i++) {
         let sides = Math.floor(Math.random() * 6) + 5; // Random sides between 5 and 10
         let ratio = ratios[sides - 5]; // Select ratio based on sides
-        let radius = Math.random() * 5 + 15; // Random radius between 10 and 30
+        let radius = Math.random() * 30 + 20; // Random radius between 20 and 50
         let centerX = Math.random() * canvas.width;
         let centerY = Math.random() * canvas.height - canvas.height; // Start above the canvas
         let speed = Math.random() * 1.5 + 0.5; // Random speed between 0.5 and 2
@@ -131,7 +172,7 @@
             x: Math.random() * radius - radius / 2,
             y: Math.random() * radius - radius / 2
         };
-        let points = chaosGame(initialVertices, 1500, startingPoint, ratio);
+        let points = chaosGame(initialVertices, 1000, startingPoint, ratio);
 
         snowflakes.push({
             centerX,
@@ -147,7 +188,16 @@
     }
 
     // Start the animation
-    ctx.fillStyle = "white"; // Set the color of points
+    ctx.fillStyle = "black"; // Set the color of points
     animateSnowflakes(snowflakes);
 </script>
+
+
+
+
+
+
+
+
+
 </html>
