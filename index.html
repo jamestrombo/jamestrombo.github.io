@@ -113,7 +113,7 @@
 
     // Set up parameters for multiple snowflakes
     let snowflakes = [];
-    let numSnowflakes = 10; // Number of snowflakes
+    let numSnowflakes = 5; // Number of snowflakes
     let ratios = [0.618, 0.667, 0.692, 0.707, 0.742, 0.764];
 
     for (let i = 0; i < numSnowflakes; i++) {
@@ -131,7 +131,7 @@
             x: Math.random() * radius - radius / 2,
             y: Math.random() * radius - radius / 2
         };
-        let points = chaosGame(initialVertices, 1500, startingPoint, ratio);
+        let points = chaosGame(initialVertices, 1750, startingPoint, ratio);
 
         snowflakes.push({
             centerX,
