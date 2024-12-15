@@ -1,28 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Trombo</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.1/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <main>
-         <canvas id="canvas" class="bg-[#87cefa]" style="position:absolute; left:0; top:0; z-index: -1;">
-        </canvas>
-        <div class="hero min-h-screen">
-          <div class="hero-content text-center">
-            <div class="max-w-xl">
-              <h1 class="text-5xl font-bold">James Trombo</h1>
-              <p class="pt-6 pb-5">I'm a current student studying Computer Science & Math interested in Finance, Math, Technology and Real Estate.</p>
-
-              <p class="pb-6">I have experience with a variety of technologies, including React, Angular, Java, Python and many other. I've built projects in hockey analytics, sports betting arbitrage, neural networks and much more.</p>
-              <button class="btn btn-primary"><a href="mailto:jamestrombo@gmail.com">Email Me</a></button>
-            </div>
-          </div>
-        </div>
+         <canvas id="canvas" style="background-color: #87cefa">
+        </canvas> 
     </main>
   </body>
   <script>
@@ -47,7 +34,6 @@
 
     // Chaos game function with ratio r
     function chaosGame(vertices, iterations, startingPoint, ratio) {
-        let points = [];
         let currentPoint = startingPoint;
         for (let i = 0; i < iterations; i++) {
             // Choose a random vertex
@@ -64,25 +50,9 @@
                 y: currentPoint.y + ratio * distanceToVertex.y
             };
 
-            points.push({
-                x: currentPoint.x,
-                y: currentPoint.y
-            });
+            // Draw the point
+            ctx.fillRect(currentPoint.x, currentPoint.y, 1, 1);
         }
-        return points;
-    }
-
-    // Function to draw snowflakes
-    function drawSnowflake(points, centerX, centerY, rotationAngle) {
-        ctx.save();
-        ctx.translate(centerX, centerY);
-        ctx.rotate(rotationAngle);
-
-        points.forEach(point => {
-            ctx.fillRect(point.x, point.y, 1, 1);
-        });
-
-        ctx.restore();
     }
 
     // Function to animate falling and spinning snowflakes
@@ -101,8 +71,17 @@
                     snowflake.centerX = Math.random() * canvas.width;
                 }
 
-                // Draw the precomputed points for the snowflake at the new position and rotation
-                drawSnowflake(snowflake.points, snowflake.centerX, snowflake.centerY, snowflake.rotationAngle);
+                // Calculate rotated vertices
+                let polygonVertices = getPolygonVertices(
+                    snowflake.centerX,
+                    snowflake.centerY,
+                    snowflake.radius,
+                    snowflake.sides,
+                    snowflake.rotationAngle
+                );
+
+                // Draw the chaos game fractal for the snowflake
+                chaosGame(polygonVertices, 1000, snowflake.startingPoint, snowflake.ratio);
             });
 
             requestAnimationFrame(draw);
@@ -119,19 +98,11 @@
     for (let i = 0; i < numSnowflakes; i++) {
         let sides = Math.floor(Math.random() * 6) + 5; // Random sides between 5 and 10
         let ratio = ratios[sides - 5]; // Select ratio based on sides
-        let radius = Math.random() * 5 + 15; // Random radius between 10 and 30
+        let radius = Math.random() * 30 + 20; // Random radius between 20 and 50
         let centerX = Math.random() * canvas.width;
         let centerY = Math.random() * canvas.height - canvas.height; // Start above the canvas
         let speed = Math.random() * 1.5 + 0.5; // Random speed between 0.5 and 2
         let spinSpeed = Math.random() * 0.1 - 0.05; // Random spin speed between -0.05 and 0.05 radians/frame
-
-        // Generate initial vertices and chaos game points relative to origin
-        let initialVertices = getPolygonVertices(0, 0, radius, sides);
-        let startingPoint = {
-            x: Math.random() * radius - radius / 2,
-            y: Math.random() * radius - radius / 2
-        };
-        let points = chaosGame(initialVertices, 1500, startingPoint, ratio);
 
         snowflakes.push({
             centerX,
@@ -142,7 +113,10 @@
             speed,
             spinSpeed,
             rotationAngle: 0,
-            points
+            startingPoint: {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height
+            }
         });
     }
 
@@ -150,4 +124,10 @@
     ctx.fillStyle = "white"; // Set the color of points
     animateSnowflakes(snowflakes);
 </script>
+
+
+
+
+
+
 </html>
