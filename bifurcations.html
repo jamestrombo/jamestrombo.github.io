@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization of Bifurcations of Quadratic Family</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <canvas id="canvas" style="position:absolute; left:0; top:0; z-index: -1;"></canvas>
+    </main>
+
+    <script>
+      // Get the canvas and resize it to full screen
+      var canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let width = canvas.width;
+      let height = canvas.height;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        width = canvas.width;
+        height = canvas.height;
+        drawBifurcation();
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+
+      let maxIterations = 1000;
+      let lastIterations = 200;
+
+      // Default range for full bifurcation overview
+      let xmin = -2;
+      let xmax = 1;
+      let ymin = -2.2;
+      let ymax = 2.2;
+      let zoomFactor = 1;
+      let isRendering = false;
+
+      let isDragging = false;
+      let lastMouseX = 0;
+      let lastMouseY = 0;
+
+      // New xAxisPosition and adjustment for drawing
+      let xAxisPosition = 40;
+
+      function drawBifurcation() {
+        if (isRendering) return;
+        isRendering = true;
+
+        requestAnimationFrame(() => {
+          ctx.clearRect(0, 0, width, height);
+          let imageData = ctx.createImageData(width - xAxisPosition, height); // Adjust image size based on axis position
+          let pixels = imageData.data;
+
+          for (let px = 0; px < width - xAxisPosition; px++) {  // Adjust to fit within the canvas
+            let c = xmin + (px / (width - xAxisPosition)) * (xmax - xmin);
+            let x = 0;
+
+            for (let i = 0; i < maxIterations; i++) {
+              x = x * x + c;
+
+              // Only plot points that are within the visible y-range
+              if (i >= maxIterations - lastIterations) {
+                if (x >= ymin && x <= ymax) {
+                  let py = Math.floor(((x - ymin) / (ymax - ymin)) * height);
+                  let index = ((height - py) * (width - xAxisPosition) + px) * 4; // Adjust pixel index
+
+                  // Compute brightness level (normalized between 0 and 1)
+                  let brightness = 1 - (i - (maxIterations - lastIterations)) / lastIterations;
+
+                  // Gradient between dark green and bright green
+                  let r = Math.floor(34 + brightness * (102 - 34));  // 34 → 102
+                  let g = Math.floor(136 + brightness * (255 - 136)); // 136 → 255
+                  let b = Math.floor(0 + brightness * (51 - 0));    // 0 → 51
+
+                  pixels[index] = r;
+                  pixels[index + 1] = g;
+                  pixels[index + 2] = b;
+                  pixels[index + 3] = 255; // Fully opaque
+                }
+              }
+            }
+          }
+
+          ctx.putImageData(imageData, xAxisPosition, 0); // Shift the diagram to the right to make room for the axis
+          drawXAxis();
+          drawYAxis();
+          isRendering = false;
+        });
+      }
+
+      function drawXAxis() {
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+
+        let yAxisPosition = height - 30; // Position slightly above the bottom
+
+        // Draw axis line
+        ctx.beginPath();
+        ctx.moveTo(xAxisPosition, yAxisPosition);
+        ctx.lineTo(width, yAxisPosition);
+        ctx.stroke();
+
+        // Draw tick marks and labels
+        ctx.fillStyle = "black";
+        ctx.font = "13px Arial";
+        ctx.textAlign = "center";
+
+        let numTicks = 10; // Number of tick marks
+        for (let i = 0; i <= numTicks; i++) {
+          let xScreen = (i / numTicks) * (width - xAxisPosition);
+          let cValue = xmin + (i / numTicks) * (xmax - xmin);
+
+          // Draw tick mark
+          ctx.beginPath();
+          ctx.moveTo(xScreen + xAxisPosition, yAxisPosition - 5);
+          ctx.lineTo(xScreen + xAxisPosition, yAxisPosition + 5);
+          ctx.stroke();
+
+          // Draw label
+          ctx.fillText(cValue.toFixed(2), xScreen + xAxisPosition, yAxisPosition + 20);
+        }
+      }
+
+      function drawYAxis() {
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+
+        // Draw the vertical axis at the new xAxisPosition
+        ctx.beginPath();
+        ctx.moveTo(xAxisPosition, 0);
+        ctx.lineTo(xAxisPosition, height);
+        ctx.stroke();
+
+        // Draw tick marks and labels
+        ctx.fillStyle = "black";
+        ctx.font = "13px Arial";
+        ctx.textAlign = "center";
+
+        let numTicks = 10; // Number of tick marks
+        for (let i = 0; i <= numTicks; i++) {
+          let yScreen = (i / numTicks) * height;
+          let cValue = ymin + (1 - i / numTicks) * (ymax - ymin); // Corrected y-axis value calculation
+
+          // Draw tick mark
+          ctx.beginPath();
+          ctx.moveTo(xAxisPosition - 5, yScreen);
+          ctx.lineTo(xAxisPosition + 5, yScreen);
+          ctx.stroke();
+
+          // Draw label
+          ctx.fillText(cValue.toFixed(2), xAxisPosition - 20, yScreen);
+        }
+      }
+
+      drawBifurcation();
+
+      // Handle zooming centered at the mouse pointer
+      document.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        let zoomIntensity = 0.1;
+        let scale = event.deltaY > 0 ? 1 + zoomIntensity : 1 - zoomIntensity;
+        lastIterations = lastIterations * ((2 - scale) + (1 - scale < 0 ? 1 : -1) * 0.095);
+        maxIterations = maxIterations * ((2 - scale) + (1 - scale < 0 ? 1 : -1) * 0.095);
+
+        let mouseX = event.clientX / width;
+        let mouseY = event.clientY / height;
+
+        let xMouse = xmin + mouseX * (xmax - xmin);
+        let yMouse = ymin + mouseY * (ymax - ymin);
+
+        xmin = xMouse + (xmin - xMouse) * scale;
+        xmax = xMouse + (xmax - xMouse) * scale;
+
+        zoomFactor *= scale;
+        drawBifurcation();
+      });
+
+      // Handle dragging to pan the diagram
+      canvas.addEventListener("mousedown", (event) => {
+        isDragging = true;
+        lastMouseX = event.clientX;
+        lastMouseY = event.clientY;
+      });
+
+      document.addEventListener("mousemove", (event) => {
+        if (isDragging) {
+          let dx = (event.clientX - lastMouseX) / width * (xmax - xmin);
+          let dy = (event.clientY - lastMouseY) / height * (ymax - ymin);
+
+          xmin -= dx;
+          xmax -= dx;
+          ymin += dy;
+          ymax += dy;
+
+          lastMouseX = event.clientX;
+          lastMouseY = event.clientY;
+
+          drawBifurcation();
+        }
+      });
+
+      document.addEventListener("mouseup", () => {
+        isDragging = false;
+      });
+    </script>
+  </body>
+</html>
